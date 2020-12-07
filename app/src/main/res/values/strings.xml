@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <string name="string_all">All</string>
+    <string name="string_bookmark">Bookmarked</string>
+    <string name="string_artist_name">Artist Name</string>
+    <string name="string_collection_name">Collection Name</string>
+    <string name="string_price">Price</string>
+    <string name="string_track_count">Track Count</string>
+    <string name="string_release_date">Release Date</string>
+</resources>
