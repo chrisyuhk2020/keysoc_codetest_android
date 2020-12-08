@@ -13,5 +13,13 @@
     <fragment
         android:id="@+id/albumListFragment"
         android:name="com.keysoc.myapplication.Fragment.AlbumListFragment"
-        android:label="AlbumListFragment" />
+        android:label="AlbumListFragment" >
+        <action
+            android:id="@+id/action_albumListFragment_to_albumDetailsFragment"
+            app:destination="@id/albumDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/albumDetailsFragment"
+        android:name="com.keysoc.myapplication.Fragment.AlbumDetailsFragment"
+        android:label="AlbumDetailsFragment" />
 </navigation>

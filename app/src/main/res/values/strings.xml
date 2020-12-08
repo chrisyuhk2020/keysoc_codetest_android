@@ -7,5 +7,6 @@
     <string name="string_collection_name">Collection Name</string>
     <string name="string_price">Price</string>
     <string name="string_track_count">Track Count</string>
-    <string name="string_release_date">Release Date</string>
+    <string name="string_release_date">Release</string>
+    <string name="string_no_data">No Data</string>
 </resources>

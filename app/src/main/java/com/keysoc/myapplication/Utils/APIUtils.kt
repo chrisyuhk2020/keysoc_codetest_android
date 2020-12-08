@@ -5,6 +5,7 @@ import com.keysoc.myapplication.Event.DialogEvent
 import com.keysoc.myapplication.Event.ResponseEvent
 import android.content.Context
 import android.util.Log
+import androidx.fragment.app.FragmentActivity
 import com.github.kittinunf.fuel.core.Parameters
 import com.github.kittinunf.fuel.httpGet
 import com.github.kittinunf.fuel.moshi.moshiDeserializerOf
@@ -13,7 +14,7 @@ import org.greenrobot.eventbus.EventBus
 import java.lang.Exception
 
 object APIUtils {
-    fun <T : Any> get(url: String, parameters: Parameters? = null, context : Context, clazz: Class<T>) {
+    fun <T : Any> get(url: String, parameters: Parameters? = null, context: Context?, clazz: Class<T>) {
         if(url == null)
             return
 
@@ -29,7 +30,7 @@ object APIUtils {
 
                         val ex = result.getException()
                         println(ex)
-                        EventBus.getDefault().post(DialogEvent(context.getString(R.string.app_name), ex.toString()))
+                        EventBus.getDefault().post(DialogEvent(context!!.getString(R.string.app_name), ex.toString()))
                     }
                     is com.github.kittinunf.result.Result.Success -> {
                         Log.i("success", "success");
@@ -48,7 +49,7 @@ object APIUtils {
                 }
             }
         } catch (e : Exception) {
-            EventBus.getDefault().post(DialogEvent(context.getString(R.string.app_name), e.toString()))
+            EventBus.getDefault().post(DialogEvent(context!!.getString(R.string.app_name), e.toString()))
         }
     }
 }

@@ -158,6 +158,16 @@ public class ResultDataItem {
     private int artistId;
     private int amgArtistId;
     private String artistName;
+
+    public int getCollectionId() {
+        return collectionId;
+    }
+
+    public void setCollectionId(int collectionId) {
+        this.collectionId = collectionId;
+    }
+
+    private int collectionId;
     private String collectionName;
     private String collectionCensoredName;
     private String artistViewUrl;
