@@ -125,11 +125,16 @@ class AlbumListFragment : BaseFragment() {
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     open fun onMessageEvent(event: ResponseEvent?) {
-        if(binding.tabLayout.selectedTabPosition == 0)
+        if(binding.tabLayout.selectedTabPosition == 0 && event!!.url != null && event.url.isNotEmpty())
             resultData = (event!!.response as ResultData)
 
         if(resultData == null || binding.tabLayout.selectedTabPosition == 0) {
-            setupListView((event!!.response as ResultData))
+
+            if(event!!.url != null && event.url.isNotEmpty())
+                setupListView((event!!.response as ResultData))
+            else
+                setupListView(resultData)
+
         } else {
             setupListView(getLocalData())
         }
